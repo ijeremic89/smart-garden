@@ -26,7 +26,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("commons-validator:commons-validator:1.7")
-	implementation("javax.xml.bind:jaxb-api:2.2.4")
+	implementation("javax.xml.bind:jaxb-api:2.3.1")
 
 	implementation("org.flywaydb:flyway-core")
 	implementation("org.flywaydb:flyway-mysql")

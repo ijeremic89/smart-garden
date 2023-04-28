@@ -3,6 +3,7 @@ package ijeremic.smartgarden.services
 import ijeremic.smartgarden.dtos.LoginDTO
 import ijeremic.smartgarden.dtos.LoginResponseDTO
 import ijeremic.smartgarden.dtos.RegisterDTO
+import ijeremic.smartgarden.dtos.UserDTO
 import ijeremic.smartgarden.entities.UserEntity
 import ijeremic.smartgarden.enums.UserCreationStatus
 import ijeremic.smartgarden.enums.UserRole
@@ -67,4 +68,9 @@ class UserService(
         repository.save(userEntity)
         return UserCreationStatus.SUCCESS
     }
+
+    fun findById(id: Long): UserDTO =
+        repository.findById(id).map { it.toDto() }.orElseThrow {
+            Exception("User with ID:$id not found")
+        }
 }
